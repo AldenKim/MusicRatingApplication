@@ -1,4 +1,4 @@
-# Music Rating Application
+<img width="839" height="794" alt="image" src="https://github.com/user-attachments/assets/262a1b79-e4a4-4bac-a46a-42cf53212219" /># Music Rating Application
 Project to make a Music Ranking Application
 
 Pitch: I want to create a music ranking application that will allow a user to compare two albums, and pick their preferred album, and do that for a lot of different album and derive a ranking off of that. There is not really a collective app for ranking albums that I am aware of (like letterboxd with movies) so my hope would be to bring music listeners together in a community to help rank albums and help write great reviews
@@ -13,6 +13,9 @@ Technologies:
 - Database would be a SQL based database most likely
 
 ERD Diagram Link: https://drawsql.app/teams/brigham-young-university-13/diagrams/erd-for-music-app
+
+System design (simple right now):
+
 
 Initial Goals:
 - Start the UI
