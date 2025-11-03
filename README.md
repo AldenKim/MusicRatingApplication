@@ -13,3 +13,10 @@ Technologies:
 - Database would be a SQL based database most likely
 
 ERD Diagram Link: https://drawsql.app/teams/brigham-young-university-13/diagrams/erd-for-music-app
+
+Initial Goals:
+- Start the UI
+- Research Database Applications
+- Think about system design
+- Start on the backend
+- Figure out the algorithm to calculate user rankings
