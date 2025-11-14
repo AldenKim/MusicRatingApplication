@@ -34,10 +34,15 @@ const Register = () => {
 
       <Box
         sx={{
-          mt: 12,
+          width: "100%",
+          padding: 4,
+          border: "1px solid #ccc",
+          borderRadius: 3,
+          boxShadow: 6,
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
+          backgroundColor: "background.paper",
         }}
       >
         <Avatar sx={{ m: 1, bgcolor: "primary.light" }}>
