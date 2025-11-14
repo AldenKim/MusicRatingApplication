@@ -99,7 +99,18 @@ const Register = () => {
           <Grid container justifyContent="flex-end">
             <Grid>
               <Link to="/login" style={{ textDecoration: "none" }}>
-                Already have an account? Login
+                <Typography
+                  variant="body2"
+                  sx={{
+                    color: "#FFFFFF",
+                    transition: "color 0.2s ease-in-out",
+                    "&:hover": {
+                      color: "#B3B3B3",
+                    },
+                  }}
+                >
+                  Already have an account? Login
+                </Typography>
               </Link>
             </Grid>
           </Grid>

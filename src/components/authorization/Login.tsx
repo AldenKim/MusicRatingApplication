@@ -75,7 +75,20 @@ const Login = () => {
               Login
             </Button>
             <Grid container justifyContent={"flex-end"}>
-              <Link to="/register">Don't have an account? Register</Link>
+              <Link style={{ textDecoration: "none" }} to="/register">
+                <Typography
+                  variant="body2"
+                  sx={{
+                    color: "#FFFFFF",
+                    transition: "color 0.2s ease-in-out",
+                    "&:hover": {
+                      color: "#B3B3B3",
+                    },
+                  }}
+                >
+                  Don't have an account? Register
+                </Typography>
+              </Link>
             </Grid>
           </Box>
         </Box>
