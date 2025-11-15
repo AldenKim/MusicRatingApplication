@@ -1,5 +1,5 @@
+import logo from "../../assets/albumd_logo.png";
 import {
-  Avatar,
   Box,
   Button,
   Container,
@@ -8,7 +8,6 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import { LockOutlined } from "@mui/icons-material";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -45,10 +44,22 @@ const Register = () => {
           backgroundColor: "background.paper",
         }}
       >
-        <Avatar sx={{ m: 1, bgcolor: "primary.light" }}>
-          <LockOutlined />
-        </Avatar>
-
+        <Typography variant="h5" sx={{ alignContent: "center" }}>
+          Welcome to{" "}
+          <Box component="span" sx={{ fontWeight: "bold" }}>
+            Albumd
+          </Box>
+        </Typography>
+        <img
+          src={logo}
+          alt="Logo"
+          style={{
+            display: "block",
+            margin: "0 auto",
+            width: "125px",
+            height: "125px",
+          }}
+        />
         <Typography component="h1" variant="h5">
           Register
         </Typography>

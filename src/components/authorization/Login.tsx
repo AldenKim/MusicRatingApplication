@@ -1,9 +1,8 @@
-import { LockOutlined } from "@mui/icons-material";
+import logo from "../../assets/albumd_logo.png";
 import {
   Container,
   CssBaseline,
   Box,
-  Avatar,
   Typography,
   TextField,
   Button,
@@ -35,9 +34,22 @@ const Login = () => {
             backgroundColor: "background.paper",
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: "primary.light" }}>
-            <LockOutlined />
-          </Avatar>
+          <Typography variant="h5" sx={{ alignContent: "center" }}>
+            Welcome to{" "}
+            <Box component="span" sx={{ fontWeight: "bold" }}>
+              Albumd
+            </Box>
+          </Typography>
+          <img
+            src={logo}
+            alt="Logo"
+            style={{
+              display: "block",
+              margin: "0 auto",
+              width: "125px",
+              height: "125px",
+            }}
+          />
           <Typography variant="h5">Login</Typography>
           <Box sx={{ mt: 1 }}>
             <TextField
