@@ -9,13 +9,20 @@ import {
   Grid,
 } from "@mui/material";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleLogin = () => {};
+  const handleLogin = () => {
+    const token = "fake-auth-token";
+    localStorage.setItem("authToken", token);
+    navigate("/dashboard");
+    return token;
+  };
 
   return (
     <>
