@@ -8,11 +8,13 @@ import {
   Button,
   Grid,
 } from "@mui/material";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { UserInfoContext } from "../UserInfo/UserInfoContext";
 
 const Login = () => {
   const navigate = useNavigate();
+  const { setUserInfo } = useContext(UserInfoContext);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -20,8 +22,15 @@ const Login = () => {
   const handleLogin = () => {
     const token = "fake-auth-token";
     localStorage.setItem("authToken", token);
+    localStorage.setItem("currentUser", "exampleUser");
+
+    // Update context directly
+    setUserInfo?.({
+      authToken: token,
+      currentUser: "exampleUser",
+    });
+
     navigate("/dashboard");
-    return token;
   };
 
   return (

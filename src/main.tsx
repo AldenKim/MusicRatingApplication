@@ -4,11 +4,14 @@ import "./index.css";
 import App from "./App.tsx";
 import { ThemeProvider } from "@emotion/react";
 import theme from "./theme.ts";
+import { UserInfoProvider } from "./components/UserInfo/UserInfoProvider.tsx";
 
 createRoot(document.getElementById("root")!).render(
-  <ThemeProvider theme={theme}>
-    <StrictMode>
-      <App />
-    </StrictMode>
-  </ThemeProvider>
+  <UserInfoProvider>
+    <ThemeProvider theme={theme}>
+      <StrictMode>
+        <App />
+      </StrictMode>
+    </ThemeProvider>
+  </UserInfoProvider>
 );

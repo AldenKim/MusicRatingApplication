@@ -8,11 +8,13 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { UserInfoContext } from "../UserInfo/UserInfoContext";
 
 const Register = () => {
   const navigate = useNavigate();
+  const { setUserInfo } = useContext(UserInfoContext);
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -26,10 +28,14 @@ const Register = () => {
       return;
     }
 
-    console.log("Registering:", { name, email, password });
-
     const token = "fake-auth-token";
     localStorage.setItem("authToken", token);
+
+    setUserInfo?.({
+      authToken: token,
+      currentUser: "exampleUser",
+    });
+
     navigate("/dashboard");
     return token;
   };

@@ -4,19 +4,16 @@ import Login from "./components/authorization/Login";
 import Register from "./components/authorization/Register";
 import MainLayout from "./components/NavBar/MainLayout";
 import RankingPage from "./components/ranking/RankingPage";
-import { useEffect, useState } from "react";
+import { useContext } from "react";
+import { UserInfoContext } from "./components/UserInfo/UserInfoContext";
 
 function App() {
-  const [authenticated, setAuthenticated] = useState(false);
-
-  useEffect(() => {
-    setAuthenticated(!!localStorage.getItem("authToken"));
-  }, []);
+  const { authToken } = useContext(UserInfoContext);
 
   return (
     <div>
       <BrowserRouter>
-        {authenticated ? <AuthenticatedRoutes /> : <UnauthenticatedRoutes />}
+        {authToken ? <AuthenticatedRoutes /> : <UnauthenticatedRoutes />}
       </BrowserRouter>
     </div>
   );
@@ -27,7 +24,7 @@ const UnauthenticatedRoutes = () => {
     <Routes>
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
-      <Route path="/" element={<Navigate to="/register" replace />} />
+      <Route path="/" element={<Navigate to="/login" replace />} />
     </Routes>
   );
 };

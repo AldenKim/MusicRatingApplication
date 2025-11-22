@@ -1,11 +1,17 @@
 import { AppBar, Button, Container, Toolbar, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { UserInfoContext } from "../UserInfo/UserInfoContext";
+import { useContext } from "react";
 
 function MainNavBar() {
   const navigate = useNavigate();
+  const { setUserInfo } = useContext(UserInfoContext);
 
   const handleLogout = () => {
     localStorage.removeItem("authToken");
+    localStorage.removeItem("currentUser");
+
+    setUserInfo?.({ authToken: null, currentUser: null });
     navigate("/login");
   };
 
