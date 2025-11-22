@@ -7,5 +7,6 @@
 | 11/17/2025 | Added new logos, adding new files for application pages     | 2     |
 | 11/20/2025 | Adding and figuring out a basic navbar and basic page       | 2     |
 | 11/20/2025 | Trying to figure out a way to simulate user login authtoken | 1     |
+| 11/21/2025 | Adding a way to simulate login and logout and register      | 1     |
 
-Current Total Hours: 13
+Current Total Hours: 14
