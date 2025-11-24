@@ -15,7 +15,8 @@ Technologies:
 ERD Diagram Link: https://drawsql.app/teams/brigham-young-university-13/diagrams/erd-for-music-app
 
 System design (simple right now):
-<img width="839" height="794" alt="image" src="https://github.com/user-attachments/assets/262a1b79-e4a4-4bac-a46a-42cf53212219" />
+<img width="886" height="886" alt="image" src="https://github.com/user-attachments/assets/3c20e3da-1ffa-42d7-92e5-ca73255e47bd" />
+
 
 Initial Goals:
 - Start the UI
