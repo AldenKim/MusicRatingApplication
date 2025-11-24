@@ -1,7 +1,15 @@
-import { AppBar, Button, Container, Toolbar, Typography } from "@mui/material";
+import {
+  AppBar,
+  Box,
+  Button,
+  Container,
+  Toolbar,
+  Typography,
+} from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { UserInfoContext } from "../UserInfo/UserInfoContext";
 import { useContext } from "react";
+import albumd_logo from "/albumd_logo.png";
 
 function MainNavBar() {
   const navigate = useNavigate();
@@ -19,9 +27,28 @@ function MainNavBar() {
     <AppBar position="fixed">
       <Container>
         <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Albumd
-          </Typography>
+          <Box
+            onClick={() => navigate("/rate")}
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              cursor: "pointer",
+              flexGrow: 1,
+            }}
+          >
+            <img
+              src={albumd_logo}
+              alt="Albumd Logo"
+              style={{
+                width: "40px",
+                height: "40px",
+                marginRight: "12px",
+              }}
+            />
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+              Albumd
+            </Typography>
+          </Box>
 
           <Button color="inherit" onClick={handleLogout}>
             Logout

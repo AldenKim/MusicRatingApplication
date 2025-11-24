@@ -1,4 +1,4 @@
-import logo from "../../assets/albumd_logo.png";
+import logo from "/albumd_logo.png";
 import {
   Container,
   CssBaseline,
