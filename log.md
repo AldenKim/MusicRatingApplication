@@ -9,5 +9,6 @@
 | 11/20/2025 | Trying to figure out a way to simulate user login authtoken            | 1     |
 | 11/21/2025 | Adding a way to simulate login and logout and register                 | 1     |
 | 11/21/2025 | Adding stuff to the ranking page, and album cards (Will add api calls) | 3     |
+| 12/1/2025  | Adding new page and card animations for two album comparisons          | 3     |
 
-Current Total Hours: 17
+Current Total Hours: 20

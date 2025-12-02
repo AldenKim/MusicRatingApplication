@@ -6,6 +6,7 @@ import MainLayout from "./components/NavBar/MainLayout";
 import { useContext } from "react";
 import { UserInfoContext } from "./components/UserInfo/UserInfoContext";
 import RankPage from "./components/ranking/RankPage";
+import ComparisonPage from "./components/comparison/ComparisonPage";
 
 function App() {
   const { authToken } = useContext(UserInfoContext);
@@ -34,6 +35,7 @@ const AuthenticatedRoutes = () => {
     <Routes>
       <Route element={<MainLayout />}>
         <Route path="/rate" element={<RankPage />} />
+        <Route path="/comparison" element={<ComparisonPage />} />
         <Route path="/" element={<Navigate to="/rate" replace />} />
         <Route path="*" element={<Navigate to="/rate" replace />} />
       </Route>

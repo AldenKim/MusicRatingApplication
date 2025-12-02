@@ -26,14 +26,13 @@ function MainNavBar() {
   return (
     <AppBar position="fixed">
       <Container>
-        <Toolbar>
+        <Toolbar sx={{ position: "relative" }}>
           <Box
             onClick={() => navigate("/rate")}
             sx={{
               display: "flex",
               alignItems: "center",
               cursor: "pointer",
-              flexGrow: 1,
             }}
           >
             <img
@@ -49,8 +48,36 @@ function MainNavBar() {
               Albumd
             </Typography>
           </Box>
+          <Box
+            sx={{
+              display: "flex",
+              position: "absolute",
+              left: "50%",
+              transform: "translateX(-50%)",
+              flexGrow: 2,
+              alignItems: "center",
+            }}
+          >
+            <Button color="inherit" onClick={() => navigate("/rate")}>
+              Rate
+            </Button>
+            <Button color="inherit" onClick={() => navigate("/comparison")}>
+              Comparisons
+            </Button>
+          </Box>
 
-          <Button color="inherit" onClick={handleLogout}>
+          <Button
+            sx={{
+              color: "#1DB954",
+              border: "1px solid #1DB954",
+              "&:hover": {
+                backgroundColor: "rgba(29,185,84,0.1)",
+                borderColor: "#1ed760",
+              },
+              marginLeft: "auto",
+            }}
+            onClick={handleLogout}
+          >
             Logout
           </Button>
         </Toolbar>
