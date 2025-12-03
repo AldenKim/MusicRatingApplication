@@ -9,8 +9,9 @@ Goals:
 
 Technologies:
 - Frontend in react
-- Backend in either python or typescript
-- Database would be a SQL based database most likely
+- Backend in either python or typescript (Node.js)
+- Database would be a SQL based database most likely (Supabase)
+- Hosting on Vercel hopefully
 
 ERD Diagram Link: https://drawsql.app/teams/brigham-young-university-13/diagrams/erd-for-music-app
 
