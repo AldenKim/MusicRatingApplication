@@ -10,5 +10,7 @@
 | 11/21/2025 | Adding a way to simulate login and logout and register                 | 1     |
 | 11/21/2025 | Adding stuff to the ranking page, and album cards (Will add api calls) | 3     |
 | 12/1/2025  | Adding new page and card animations for two album comparisons          | 3     |
+| 12/2/2025  | Fixing up animations for the comparison page                           | 1     |
+| 12/2/2025  | Adding new page to list the ratings of Albums, fixing stuff, etc.      | 2     |
 
-Current Total Hours: 20
+Current Total Hours: 23

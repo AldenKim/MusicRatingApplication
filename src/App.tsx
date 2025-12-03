@@ -2,11 +2,12 @@ import "./App.css";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import Login from "./components/authorization/Login";
 import Register from "./components/authorization/Register";
-import MainLayout from "./components/NavBar/MainLayout";
+import MainLayout from "./components/navBar/MainLayout";
 import { useContext } from "react";
 import { UserInfoContext } from "./components/UserInfo/UserInfoContext";
-import RankPage from "./components/ranking/RankPage";
+import ExplorePage from "./components/explore/ExplorePage";
 import ComparisonPage from "./components/comparison/ComparisonPage";
+import RankingsPage from "./components/rankings/RankingsPage";
 
 function App() {
   const { authToken } = useContext(UserInfoContext);
@@ -34,10 +35,11 @@ const AuthenticatedRoutes = () => {
   return (
     <Routes>
       <Route element={<MainLayout />}>
-        <Route path="/rate" element={<RankPage />} />
+        <Route path="/explore" element={<ExplorePage />} />
         <Route path="/comparison" element={<ComparisonPage />} />
-        <Route path="/" element={<Navigate to="/rate" replace />} />
-        <Route path="*" element={<Navigate to="/rate" replace />} />
+        <Route path="/rankings" element={<RankingsPage />} />
+        <Route path="/" element={<Navigate to="/explore" replace />} />
+        <Route path="*" element={<Navigate to="/explore" replace />} />
       </Route>
     </Routes>
   );

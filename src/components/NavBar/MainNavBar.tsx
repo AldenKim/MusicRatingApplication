@@ -58,11 +58,19 @@ function MainNavBar() {
               alignItems: "center",
             }}
           >
-            <Button color="inherit" onClick={() => navigate("/rate")}>
-              Rate
+            <Button color="inherit" onClick={() => navigate("/explore")}>
+              Explore
             </Button>
             <Button color="inherit" onClick={() => navigate("/comparison")}>
               Comparisons
+            </Button>
+            <Button
+              color="inherit"
+              onClick={() => {
+                navigate("/rankings");
+              }}
+            >
+              Rankings
             </Button>
           </Box>
 

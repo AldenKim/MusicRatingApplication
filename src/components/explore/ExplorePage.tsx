@@ -7,6 +7,8 @@ import {
   Grid,
   Typography,
 } from "@mui/material";
+import RateAlbumPopup from "./RateAlbumPopup";
+import { useState } from "react";
 
 const mockAlbums = [
   {
@@ -36,7 +38,9 @@ const mockAlbums = [
   },
 ];
 
-function RankPage() {
+function ExplorePage() {
+  const [dialogOpen, setDialogOpen] = useState(false);
+
   return (
     <>
       <Typography variant="h4" gutterBottom>
@@ -45,7 +49,7 @@ function RankPage() {
 
       <Grid container spacing={3}>
         {mockAlbums.map((album) => (
-          <Grid>
+          <Grid key={album.name}>
             <Card>
               <CardMedia
                 component="img"
@@ -70,10 +74,14 @@ function RankPage() {
           py: 4,
         }}
       >
-        <Button variant="contained">Rank a new album +</Button>
+        <Button variant="contained" onClick={() => setDialogOpen(true)}>
+          Rate a new album +
+        </Button>
       </Box>
+
+      <RateAlbumPopup open={dialogOpen} onClose={() => setDialogOpen(false)} />
     </>
   );
 }
 
-export default RankPage;
+export default ExplorePage;
