@@ -11,7 +11,8 @@ Technologies:
 - Frontend in react
 - Backend in either python or typescript (Node.js)
 - Database would be a SQL based database most likely (Supabase)
-- Hosting on Vercel hopefully
+- Hosting on Vercel
+- Calling Spotify API and Billboard API as well
 
 ERD Diagram Link: https://drawsql.app/teams/brigham-young-university-13/diagrams/erd-for-music-app
 
