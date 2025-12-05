@@ -12,5 +12,6 @@
 | 12/1/2025  | Adding new page and card animations for two album comparisons          | 3     |
 | 12/2/2025  | Fixing up animations for the comparison page                           | 1     |
 | 12/2/2025  | Adding new page to list the ratings of Albums, fixing stuff, etc.      | 2     |
+| 12/5/2025  | updating readme for final submission when ready                        | 1     |
 
-Current Total Hours: 23
+Current Total Hours: 24
