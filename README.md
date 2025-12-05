@@ -19,6 +19,7 @@ ERD Diagram Link: https://drawsql.app/teams/brigham-young-university-13/diagrams
 System design (simple right now):
 <img width="886" height="886" alt="image" src="https://github.com/user-attachments/assets/3c20e3da-1ffa-42d7-92e5-ca73255e47bd" />
 
+Demo Video [Here](https://github.com/user-attachments/assets/fee57823-5daf-4571-8a3b-ee35cd8e2d8e)
 
 Initial Goals:
 - Start the UI
