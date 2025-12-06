@@ -47,7 +47,7 @@ function ExplorePage() {
         Current Global Top 5 Albums
       </Typography>
 
-      <Grid container spacing={3}>
+      <Grid container spacing={3} justifyContent="center">
         {mockAlbums.map((album) => (
           <Grid key={album.name}>
             <Card>

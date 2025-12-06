@@ -8,6 +8,7 @@ import { UserInfoContext } from "./components/UserInfo/UserInfoContext";
 import ExplorePage from "./components/explore/ExplorePage";
 import ComparisonPage from "./components/comparison/ComparisonPage";
 import RankingsPage from "./components/rankings/RankingsPage";
+import ProfilePage from "./components/ProfilePage/ProfilePage";
 
 function App() {
   const { authToken } = useContext(UserInfoContext);
@@ -38,6 +39,7 @@ const AuthenticatedRoutes = () => {
         <Route path="/explore" element={<ExplorePage />} />
         <Route path="/comparison" element={<ComparisonPage />} />
         <Route path="/rankings" element={<RankingsPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
         <Route path="/" element={<Navigate to="/explore" replace />} />
         <Route path="*" element={<Navigate to="/explore" replace />} />
       </Route>

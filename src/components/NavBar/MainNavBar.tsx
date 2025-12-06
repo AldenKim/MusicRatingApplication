@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 import { UserInfoContext } from "../UserInfo/UserInfoContext";
 import { useContext } from "react";
 import albumd_logo from "/albumd_logo.png";
+import ProfileDropdown from "./ProfileDropdown";
 
 function MainNavBar() {
   const navigate = useNavigate();
@@ -88,6 +89,7 @@ function MainNavBar() {
           >
             Logout
           </Button>
+          <ProfileDropdown />
         </Toolbar>
       </Container>
     </AppBar>

@@ -6,7 +6,7 @@ function MainLayout() {
     <>
       <MainNavBar />
       <div>
-        <div style={{ padding: "16px" }}>
+        <div style={{ padding: "16px", width: "100%" }}>
           <Outlet />
         </div>
       </div>
