@@ -13,5 +13,6 @@
 | 12/2/2025  | Fixing up animations for the comparison page                           | 1     |
 | 12/2/2025  | Adding new page to list the ratings of Albums, fixing stuff, etc.      | 2     |
 | 12/5/2025  | updating readme for final submission when ready                        | 1     |
+| 12/5/2025  | Adding new profile page and fixing stuff                               | 3     |
 
-Current Total Hours: 24
+Current Total Hours: 27
