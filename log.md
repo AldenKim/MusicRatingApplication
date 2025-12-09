@@ -16,5 +16,6 @@
 | 12/5/2025  | Adding new profile page and fixing stuff                               | 3     |
 | 12/8/2025  | Adding some more popups and frontend features, and adding server file  | 3     |
 | 12/8/2025  | Working on seperating frontend and backend code                        | 1     |
+| 12/8 /2025 | Adding supabase stuff just for adding users/authenticating             | 2     |
 
-Current Total Hours: 31
+Current Total Hours: 33
