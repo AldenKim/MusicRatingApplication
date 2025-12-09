@@ -15,5 +15,6 @@
 | 12/5/2025  | updating readme for final submission when ready                        | 1     |
 | 12/5/2025  | Adding new profile page and fixing stuff                               | 3     |
 | 12/8/2025  | Adding some more popups and frontend features, and adding server file  | 3     |
+| 12/8/2025  | Working on seperating frontend and backend code                        | 1     |
 
-Current Total Hours: 30
+Current Total Hours: 31
