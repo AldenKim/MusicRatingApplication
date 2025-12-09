@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import RateAlbumPopup from "./RateAlbumPopup";
 import { useState } from "react";
+import AlbumInfoPopup from "./AlbumInfoPopup";
 
 const mockAlbums = [
   {
@@ -40,6 +41,7 @@ const mockAlbums = [
 
 function ExplorePage() {
   const [dialogOpen, setDialogOpen] = useState(false);
+  const [albumInfoPopup, setAlbumInfoPopup] = useState(false);
 
   return (
     <>
@@ -49,7 +51,11 @@ function ExplorePage() {
 
       <Grid container spacing={3} justifyContent="center">
         {mockAlbums.map((album) => (
-          <Grid key={album.name}>
+          <Grid
+            key={album.name}
+            onClick={() => setAlbumInfoPopup(true)}
+            sx={{ cursor: "pointer" }}
+          >
             <Card>
               <CardMedia
                 component="img"
@@ -80,6 +86,13 @@ function ExplorePage() {
       </Box>
 
       <RateAlbumPopup open={dialogOpen} onClose={() => setDialogOpen(false)} />
+      <AlbumInfoPopup
+        open={albumInfoPopup}
+        onClose={() => setAlbumInfoPopup(false)}
+        artist="JohnDoe"
+        date="12/25/2024"
+        description="This will be the album description"
+      />
     </>
   );
 }

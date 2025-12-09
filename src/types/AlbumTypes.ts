@@ -5,4 +5,5 @@ export interface Album {
 
 export interface RankedAlbum extends Album {
   ranking: number;
+  notes: string;
 }
