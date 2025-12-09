@@ -11,33 +11,65 @@ import {
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { UserInfoContext } from "../UserInfo/UserInfoContext";
+import { signUp } from "../../../server/services/AuthService";
+import { supabase } from "../../../server/db/supabaseClient";
+import { fetchUserProfile } from "../../../server/services/UserService";
 
 const Register = () => {
   const navigate = useNavigate();
   const { setUserInfo } = useContext(UserInfoContext);
 
-  const [name, setName] = useState("");
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!name || !email || !password) {
+    if (!username || !email || !password) {
       alert("Please fill out all fields.");
       return;
     }
 
-    const token = "fake-auth-token";
-    localStorage.setItem("authToken", token);
+    const result = await signUp(username, email, password);
+    if (!result || !result.user) {
+      alert("Registration failed.");
+      return;
+    }
+
+    const { user } = result;
+
+    const { data: sessionData, error: sessionError } =
+      await supabase.auth.getSession();
+    if (sessionError) {
+      console.error("Session error:", sessionError.message);
+      alert("Error getting session.");
+      return;
+    }
+
+    const session = sessionData.session;
+    if (!session) {
+      alert("No active session returned after signup.");
+      return;
+    }
+
+    const profile = await fetchUserProfile();
+    if (!profile) {
+      alert("Failed to load user profile.");
+      return;
+    }
+
+    localStorage.setItem("authToken", session.access_token);
+    localStorage.setItem("username", profile.username);
+    localStorage.setItem("email", user.email ?? "");
 
     setUserInfo?.({
-      authToken: token,
-      currentUser: "exampleUser",
+      authToken: session.access_token,
+      username: profile.username,
+      email: user.email,
     });
 
-    navigate("/dashboard");
-    return token;
+    navigate("/explore");
   };
 
   return (
@@ -85,8 +117,8 @@ const Register = () => {
               fullWidth
               id="name"
               label="Name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
             />
 
             <TextField

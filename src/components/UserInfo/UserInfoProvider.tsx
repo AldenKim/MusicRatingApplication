@@ -8,17 +8,20 @@ interface Props {
 
 export const UserInfoProvider = ({ children }: Props) => {
   const [userInfo, setUserInfo] = useState<UserInfo>({
-    currentUser: localStorage.getItem("currentUser"),
+    username: localStorage.getItem("currentUser"),   // username
+    email: localStorage.getItem("email") ?? undefined,  // email
     authToken: localStorage.getItem("authToken"),
   });
 
   useEffect(() => {
     const handleStorageChange = () => {
       setUserInfo({
-        currentUser: localStorage.getItem("currentUser"),
+        username: localStorage.getItem("currentUser"),
+        email: localStorage.getItem("email") ?? undefined,
         authToken: localStorage.getItem("authToken"),
       });
     };
+
     window.addEventListener("storage", handleStorageChange);
     return () => window.removeEventListener("storage", handleStorageChange);
   }, []);

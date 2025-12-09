@@ -8,8 +8,9 @@ import {
   Typography,
 } from "@mui/material";
 import RateAlbumPopup from "./RateAlbumPopup";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AlbumInfoPopup from "./AlbumInfoPopup";
+import { fetchUserProfile } from "../../../server/services/UserService";
 
 const mockAlbums = [
   {
@@ -42,9 +43,26 @@ const mockAlbums = [
 function ExplorePage() {
   const [dialogOpen, setDialogOpen] = useState(false);
   const [albumInfoPopup, setAlbumInfoPopup] = useState(false);
+  const [username, setUsername] = useState<string | null>(null);
+
+  useEffect(() => {
+    const getUserProfile = async () => {
+      try {
+        const profile = await fetchUserProfile();
+        setUsername(profile.username);
+      } catch (err) {
+        console.error("Failed to fetch user profile:", err);
+      }
+    };
+    getUserProfile();
+  }, []);
 
   return (
     <>
+      <Typography variant="h4" gutterBottom align="center" mb={3}>
+        Welcome, to Albumd {username ?? "Guest"}
+      </Typography>
+
       <Typography variant="h4" gutterBottom>
         Current Global Top 5 Albums
       </Typography>

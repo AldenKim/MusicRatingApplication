@@ -11,6 +11,8 @@ import {
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { UserInfoContext } from "../UserInfo/UserInfoContext";
+import { signIn } from "../../../server/services/AuthService";
+import { fetchUserProfile } from "../../../server/services/UserService";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -19,18 +21,38 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleLogin = () => {
-    const token = "fake-auth-token";
-    localStorage.setItem("authToken", token);
-    localStorage.setItem("currentUser", "exampleUser");
+  const handleLogin = async () => {
+    const result = await signIn(email, password);
 
-    // Update context directly
+    if (!result || !result.user || !result.session) {
+      alert("Login failed or no active session.");
+      return;
+    }
+
+    const { user, session } = result;
+
+    let profile;
+    try {
+      profile = await fetchUserProfile();
+    } catch (err) {
+      console.error("Failed to fetch profile:", err);
+      alert("Failed to load user profile.");
+      return;
+    }
+
+    const username = profile.username;
+
+    localStorage.setItem("authToken", session.access_token);
+    localStorage.setItem("username", username);
+    localStorage.setItem("email", user.email ?? "");
+
     setUserInfo?.({
-      authToken: token,
-      currentUser: "exampleUser",
+      authToken: session.access_token,
+      username: username,
+      email: user.email ?? "",
     });
 
-    navigate("/dashboard");
+    navigate("/explore");
   };
 
   return (

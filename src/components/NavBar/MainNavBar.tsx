@@ -11,16 +11,20 @@ import { UserInfoContext } from "../UserInfo/UserInfoContext";
 import { useContext } from "react";
 import albumd_logo from "/albumd_logo.png";
 import ProfileDropdown from "./ProfileDropdown";
+import { signOut } from "../../../server/services/AuthService";
 
 function MainNavBar() {
   const navigate = useNavigate();
   const { setUserInfo } = useContext(UserInfoContext);
 
-  const handleLogout = () => {
-    localStorage.removeItem("authToken");
-    localStorage.removeItem("currentUser");
+  const handleLogout = async () => {
+    await signOut();
 
-    setUserInfo?.({ authToken: null, currentUser: null });
+    localStorage.removeItem("authToken");
+    localStorage.removeItem("username");
+    localStorage.removeItem("email");
+
+    setUserInfo?.({ authToken: null, username: null, email: undefined });
     navigate("/login");
   };
 
